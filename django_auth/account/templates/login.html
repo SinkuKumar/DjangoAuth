@@ -8,7 +8,9 @@
 {% block body %}
 <div class="auth-form">
     <form method="post" action="{% url 'login' %}">
-        <img src="{% static 'img/DjangoAuthLogo.png' %}" alt="DjangoAuthLogo" height="50" class="d-inline-block align-text-top">
+        <div class="text-center mb-4">
+            <img src="{% static 'img/DjangoAuthLogo.png' %}" alt="DjangoAuthLogo" height="50" class="d-inline-block align-text-top">
+        </div>
         {% csrf_token %}
         {% if messages %}
         {% for message in messages %}
@@ -20,13 +22,13 @@
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp"
-                placeholder="Enter email" required>
+                placeholder="myusername" required>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+            <input type="password" class="form-control" id="password" name="password" placeholder="secret-password" required>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary mt-2">Login</button>
     </form>
 </div>
 {% endblock %}
